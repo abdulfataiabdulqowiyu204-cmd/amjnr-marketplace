@@ -151,6 +151,7 @@ function updateCart() {
         };
     }
 }
+    document.addEventListener("DOMContentLoaded", () => {
   displayProducts(products);
 
   document.querySelectorAll("[data-cat]").forEach(button => {
