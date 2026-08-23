@@ -135,11 +135,21 @@ function updateCart() {
 
     cartButton.textContent = `🛒 ${cartCount}`;
 
-    cartButton.onclick = () => {
-      alert(`🛒 Your Cart\n\nYou have ${cartCount} item(s) in your cart.`);
-    };
-  }
-}
+   cartButton.textContent = `🛒 ${cartCount}`;
+
+cartButton.onclick = () => {
+    if (cartItems.length === 0) {
+        alert("🛒 Your Cart is empty.");
+        return;
+    }
+
+    const items = cartItems.map((item, index) =>
+        `${index + 1}. ${item.name} — ${item.price}`
+    ).join("\n");
+
+    alert(`🛒 YOUR CART\n\n${items}\n\nTotal items: ${cartItems.length}`);
+};    
+  
 
 
 document.addEventListener("DOMContentLoaded", () => {
