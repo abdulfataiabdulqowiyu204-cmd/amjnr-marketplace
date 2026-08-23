@@ -4,58 +4,81 @@ const products = [
     category: "Phones & Tablets",
     price: "₦650,000",
     oldPrice: "₦720,000",
-    icon: "📱",
-    seller: "Amjnr Store"
+    discount: "10% OFF",
+    image: "assets/products/iphone-13.svg",
+    rating: "4.8",
+    seller: "Amjnr Store",
+    stock: "In Stock"
   },
   {
     name: "Samsung Galaxy A15",
     category: "Phones & Tablets",
     price: "₦210,000",
     oldPrice: "₦240,000",
-    icon: "📱",
-    seller: "Tech Hub NG"
+    discount: "13% OFF",
+    image: "assets/products/samsung-a15.svg",
+    rating: "4.7",
+    seller: "Tech Hub NG",
+    stock: "In Stock"
   },
   {
-    name: "Women's Fashion Dress",
+    name: "Premium Women's Fashion Dress",
     category: "Fashion",
     price: "₦35,000",
     oldPrice: "₦45,000",
-    icon: "👗",
-    seller: "Fashion House"
+    discount: "22% OFF",
+    image: "assets/products/fashion-dress.svg",
+    rating: "4.6",
+    seller: "Fashion House",
+    stock: "In Stock"
   },
   {
-    name: "HP Laptop",
+    name: "HP Core i5 Laptop",
     category: "Electronics",
     price: "₦450,000",
     oldPrice: "₦500,000",
-    icon: "💻",
-    seller: "Computer World"
+    discount: "10% OFF",
+    image: "assets/products/hp-laptop.svg",
+    rating: "4.8",
+    seller: "Computer World",
+    stock: "In Stock"
   },
   {
-    name: "Kitchen Blender",
+    name: "Professional Kitchen Blender",
     category: "Home & Kitchen",
     price: "₦38,000",
     oldPrice: "₦45,000",
-    icon: "🏠",
-    seller: "Home Store"
+    discount: "16% OFF",
+    image: "assets/products/blender.svg",
+    rating: "4.5",
+    seller: "Home Store",
+    stock: "In Stock"
   },
   {
-    name: "Beauty Makeup Set",
+    name: "Complete Beauty Makeup Set",
     category: "Beauty",
     price: "₦25,000",
     oldPrice: "₦32,000",
-    icon: "💄",
-    seller: "Beauty Shop"
+    discount: "22% OFF",
+    image: "assets/products/makeup-set.svg",
+    rating: "4.7",
+    seller: "Beauty Shop",
+    stock: "In Stock"
   },
   {
-    name: "Grocery Food Basket",
+    name: "Premium Grocery Food Basket",
     category: "Groceries",
     price: "₦30,000",
     oldPrice: "₦35,000",
-    icon: "🛒",
-    seller: "Fresh Market"
+    discount: "14% OFF",
+    image: "assets/products/grocery-basket.svg",
+    rating: "4.6",
+    seller: "Fresh Market",
+    stock: "In Stock"
   }
 ];
+  
+    
 
 let cartCount = 0;
 
