@@ -168,12 +168,14 @@ function updateCart() {
       </div>
     `).join("");
   }
-
+    
   if (cartTotal) {
     cartTotal.textContent = cartItems.length;
   }
 
   modal.style.display = "flex";
+}
+}
 }
     document.addEventListener("DOMContentLoaded", () => {
   displayProducts(products);
