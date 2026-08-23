@@ -124,10 +124,18 @@ function updateCart() {
   if (!cart) return;
 
   const buttons = cart.querySelectorAll("button");
+
   if (buttons.length > 1) {
-    buttons[buttons.length - 1].textContent = `🛒 ${cartCount}`;
+    const cartButton = buttons[buttons.length - 1];
+
+    cartButton.textContent = `🛒 ${cartCount}`;
+
+    cartButton.onclick = () => {
+      alert(`🛒 Your Cart\n\nYou have ${cartCount} item(s) in your cart.`);
+    };
   }
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   displayProducts(products);
