@@ -141,42 +141,41 @@ function displayProducts(list) {
   });
 }
 function updateCart() {
-    const cart = document.querySelector(".nav-actions");
-    if (!cart) return;
-
-    const buttons = cart.querySelectorAll("button");
-
-    if (buttons.length > 1) {
-        const cartButton = buttons[buttons.length - 1];
-
-        cartButton.textContent = `🛒 ${cartCount}`;
-
-        cartButton.onclick = () => {
-  const modal = document.getElementById("modal");
+  const cartButton = document.getElementById("cartBtn");
+  const cartCountElement = document.getElementById("cartCount");
+  const cartPanel = document.getElementById("cart-panel");
   const cartItemsContainer = document.getElementById("cart-items");
   const cartTotal = document.getElementById("cart-total");
 
-  if (!modal || !cartItemsContainer) return;
-
-  if (cartItems.length === 0) {
-    cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
-  } else {
-    cartItemsContainer.innerHTML = cartItems.map((item, index) => `
-      <div class="cart-item">
-        <span>${index + 1}. ${item.name}</span>
-        <strong>${item.price}</strong>
-      </div>
-    `).join("");
-  }
-    
-  if (cartTotal) {
-    cartTotal.textContent = cartItems.length;
+  if (cartCountElement) {
+    cartCountElement.textContent = cartCount;
   }
 
-  modal.style.display = "flex";
+  if (!cartButton) return;
+
+  cartButton.onclick = () => {
+    if (!cartPanel || !cartItemsContainer) return;
+
+    if (cartItems.length === 0) {
+      cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+    } else {
+      cartItemsContainer.innerHTML = cartItems.map((item, index) => `
+        <div class="cart-item">
+          <span>${index + 1}. ${item.name}</span>
+          <strong>${item.price}</strong>
+        </div>
+      `).join("");
+    }
+
+    if (cartTotal) {
+      cartTotal.textContent = cartItems.length;
+    }
+
+    cartPanel.style.display = "block";
+  };
 }
-}
-}
+
+
     document.addEventListener("DOMContentLoaded", () => {
   displayProducts(products);
 
@@ -227,5 +226,13 @@ function updateCart() {
         "Seller registration will be available in the next Amjnr marketplace update."
       );
     });
+  }
+  const closeCart = document.getElementById("close-cart");
+const cartPanel = document.getElementById("cart-panel");
+
+if (closeCart && cartPanel) {
+  closeCart.addEventListener("click", () => {
+    cartPanel.style.display = "none";
+   });
   }
 });
