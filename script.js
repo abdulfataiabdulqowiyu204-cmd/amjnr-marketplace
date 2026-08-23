@@ -5,7 +5,7 @@ const products = [
     price: "₦650,000",
     oldPrice: "₦720,000",
     discount: "10% OFF",
-    image: "assets/products/iphone-13.svg",
+    image: "assets/products/iphone-13.png",
     rating: "4.8",
     seller: "Amjnr Store",
     stock: "In Stock"
