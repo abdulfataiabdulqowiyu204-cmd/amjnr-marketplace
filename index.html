@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Amjnr is an online marketplace connecting buyers and sellers in Nigeria.">
+  <meta name="keywords" content="Amjnr, online marketplace, Nigeria shopping, buy online, sell online, electronics, fashion, phones, gadgets">
+  <title>Amjnr — Everything You Need. One Marketplace.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home"><img src="assets/logo.png" alt="Amjnr Marketplace logo"></a>
+      <button class="menu-btn" aria-label="Open menu">☰</button>
+      <nav class="navlinks">
+        <a href="#home">Home</a><a href="#categories">Categories</a><a href="#deals">Deals</a><a href="#sell">Sell on Amjnr</a>
+      </nav>
+      <div class="nav-actions"><button id="searchBtn">🔎</button><button id="cartBtn">🛒 <span id="cartCount">0</span></button></div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero container">
+      <div class="slider" aria-label="Amjnr promotions">
+        <div class="slides">
+          <img class="slide active" src="assets/slide1.png" alt="Welcome to Amjnr">
+          <img class="slide" src="assets/slide2.png" alt="Become an Amjnr seller">
+          <img class="slide" src="assets/slide3.png" alt="Phones and gadgets">
+          <img class="slide" src="assets/slide4.png" alt="Fashion on Amjnr">
+          <img class="slide" src="assets/slide5.png" alt="Special deals on Amjnr">
+        </div>
+        <button class="prev" aria-label="Previous slide">‹</button><button class="next" aria-label="Next slide">›</button>
+        <div class="dots" id="dots"></div>
+      </div>
+    </section>
+
+    <section class="trust">
+      <div class="container trust-grid">
+        <div>🔒 <b>Safe & Secure</b><small>Shop with confidence</small></div>
+        <div>🚚 <b>Fast Delivery</b><small>Convenient delivery</small></div>
+        <div>💰 <b>Great Prices</b><small>Value for your money</small></div>
+        <div>🤝 <b>Trusted Sellers</b><small>Discover new stores</small></div>
+      </div>
+    </section>
+
+    <section class="container section" id="categories">
+      <div class="section-head"><h2>Shop by Category</h2><a href="#categories">View all →</a></div>
+      <div class="category-grid">
+        <button data-cat="Phones & Tablets">📱<span>Phones & Tablets</span></button>
+        <button data-cat="Fashion">👗<span>Fashion</span></button>
+        <button data-cat="Electronics">💻<span>Electronics</span></button>
+        <button data-cat="Home & Kitchen">🏠<span>Home & Kitchen</span></button>
+        <button data-cat="Beauty">💄<span>Beauty</span></button>
+        <button data-cat="Groceries">🛒<span>Groceries</span></button>
+      </div>
+    </section>
+
+    <section class="container section" id="deals">
+      <div class="section-head"><h2>Popular Products</h2><a href="#deals">View all →</a></div>
+      <div class="products" id="products"></div>
+    </section>
+
+    <section class="seller container" id="sell">
+      <div><p class="eyebrow">GROW WITH AMJNR</p><h2>Have products to sell?</h2><p>Join Amjnr and create your own seller store. Reach more customers and grow your business.</p></div>
+      <button id="sellerBtn">Become a Seller →</button>
+    </section>
+
+    <section class="container section">
+      <div class="newsletter"><div><h2>Stay in the loop</h2><p>Get updates about new products and special deals.</p></div><form id="newsletter"><input type="email" placeholder="Your email address" required><button>Subscribe</button></form></div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-grid"><div><img src="assets/logo.png" alt="Amjnr" class="footer-logo"><p>Everything You Need. One Marketplace.</p></div><div><h4>Shop</h4><a href="#categories">Categories</a><a href="#deals">Deals</a></div><div><h4>Sell</h4><a href="#sell">Become a Seller</a><a href="#sell">Seller Help</a></div><div><h4>Support</h4><a href="#">Contact Us</a><a href="#">Returns</a></div></div><div class="copyright">© <span id="year"></span> Amjnr Marketplace. Built for Nigeria.</div></footer>
+
+  <div class="modal" id="modal"><div class="modal-card"><button class="close" id="close">×</button><h2 id="modalTitle">Search Amjnr</h2><div id="modalBody"><input id="searchInput" placeholder="Search phones, fashion, gadgets..."><button id="doSearch">Search</button></div></div></div>
+  <script src="script.js"></script>
+</body>
+</html>
