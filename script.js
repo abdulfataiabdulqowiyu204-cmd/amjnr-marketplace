@@ -16,7 +16,7 @@ const products = [
     price: "₦210,000",
     oldPrice: "₦240,000",
     discount: "13% OFF",
-    image: "assets/products/samsung-a15.svg",
+    image: "assets/products/samsung-a15.png",
     rating: "4.7",
     seller: "Tech Hub NG",
     stock: "In Stock"
@@ -27,7 +27,7 @@ const products = [
     price: "₦35,000",
     oldPrice: "₦45,000",
     discount: "22% OFF",
-    image: "assets/products/fashion-dress.svg",
+    image: "assets/products/fashion-dress.png",
     rating: "4.6",
     seller: "Fashion House",
     stock: "In Stock"
@@ -38,7 +38,7 @@ const products = [
     price: "₦450,000",
     oldPrice: "₦500,000",
     discount: "10% OFF",
-    image: "assets/products/hp-laptop.svg",
+    image: "assets/products/hp-laptop.png",
     rating: "4.8",
     seller: "Computer World",
     stock: "In Stock"
@@ -49,7 +49,7 @@ const products = [
     price: "₦38,000",
     oldPrice: "₦45,000",
     discount: "16% OFF",
-    image: "assets/products/blender.svg",
+    image: "assets/products/blender.png",
     rating: "4.5",
     seller: "Home Store",
     stock: "In Stock"
@@ -60,7 +60,7 @@ const products = [
     price: "₦25,000",
     oldPrice: "₦32,000",
     discount: "22% OFF",
-    image: "assets/products/makeup-set.svg",
+    image: "assets/products/makeup-set.png",
     rating: "4.7",
     seller: "Beauty Shop",
     stock: "In Stock"
@@ -71,7 +71,7 @@ const products = [
     price: "₦30,000",
     oldPrice: "₦35,000",
     discount: "14% OFF",
-    image: "assets/products/grocery-basket.svg",
+    image: "assets/products/grocery-basket.png",
     rating: "4.6",
     seller: "Fresh Market",
     stock: "In Stock"
