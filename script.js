@@ -152,20 +152,28 @@ function updateCart() {
         cartButton.textContent = `🛒 ${cartCount}`;
 
         cartButton.onclick = () => {
-            if (cartItems.length === 0) {
-                alert("🛒 Your Cart is empty.");
-                return;
-            }
+  const modal = document.getElementById("modal");
+  const cartItemsContainer = document.getElementById("cart-items");
+  const cartTotal = document.getElementById("cart-total");
 
-            const items = cartItems
-                .map((item, index) => `${index + 1}. ${item.name} — ${item.price}`)
-                .join("\n");
+  if (!modal || !cartItemsContainer) return;
 
-            alert(
-                `🛒 YOUR CART\n\n${items}\n\nTotal items: ${cartItems.length}`
-            );
-        };
-    }
+  if (cartItems.length === 0) {
+    cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+  } else {
+    cartItemsContainer.innerHTML = cartItems.map((item, index) => `
+      <div class="cart-item">
+        <span>${index + 1}. ${item.name}</span>
+        <strong>${item.price}</strong>
+      </div>
+    `).join("");
+  }
+
+  if (cartTotal) {
+    cartTotal.textContent = cartItems.length;
+  }
+
+  modal.style.display = "flex";
 }
     document.addEventListener("DOMContentLoaded", () => {
   displayProducts(products);
