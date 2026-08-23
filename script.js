@@ -84,9 +84,13 @@ let cartCount = 0;
 let cartItems = [];
 function displayProducts(list) {
   const container = document.getElementById("products");
-  if (!container) return;
 
-  if (list.length === 0) {
+  if (!container) {
+    console.error("Products container not found");
+    return;
+  }
+
+  if (!Array.isArray(list) || list.length === 0) {
     container.innerHTML = "<p>No products found.</p>";
     return;
   }
@@ -94,16 +98,27 @@ function displayProducts(list) {
   container.innerHTML = list.map(product => `
     <article class="product-card">
       <div class="product-image">
-  <img src="${product.image}" alt="${product.name}">
-</div>
+        <img
+          src="${product.image}"
+          alt="${product.name}"
+        >
+      </div>
+
       <div class="product-info">
-        <small>${product.category}</small>
-        <h3>${product.name}</h3>
-        <p class="price">${product.price}</p>
-        <del>${product.oldPrice}</del>
-        <p>⭐ 4.8 · ${product.seller}</p>
-        <button class="add-cart"
-          data-product="${product.name}">
+        <small>${product.category || ""}</small>
+        <h3>${product.name || "Product"}</h3>
+        <p class="price">${product.price || ""}</p>
+        <del>${product.oldPrice || ""}</del>
+
+        <p>
+          ⭐ ${product.rating || "4.8"} ·
+          ${product.seller || "Amjnr Store"}
+        </p>
+
+        <button
+          class="add-cart"
+          data-product="${product.name}"
+        >
           Add to Cart
         </button>
       </div>
@@ -112,18 +127,19 @@ function displayProducts(list) {
 
   document.querySelectorAll(".add-cart").forEach(button => {
     button.addEventListener("click", () => {
-  const product = products.find(
-    item => item.name === button.dataset.product
-  );
+      const product = products.find(
+        item => item.name === button.dataset.product
+      );
 
-  if (product) {
-    cartItems.push(product);
-    cartCount = cartItems.length;
-    updateCart();
-    button.textContent = "Added ✓";
-  }
-});
-
+      if (product) {
+        cartItems.push(product);
+        cartCount = cartItems.length;
+        button.textContent = "Added ✓";
+        updateCart();
+      }
+    });
+  });
+}
 function updateCart() {
     const cart = document.querySelector(".nav-actions");
     if (!cart) return;
