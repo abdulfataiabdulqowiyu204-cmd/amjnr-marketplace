@@ -81,7 +81,7 @@ const products = [
     
 
 let cartCount = 0;
-
+let cartItems = [];
 function displayProducts(list) {
   const container = document.getElementById("products");
   if (!container) return;
@@ -112,12 +112,17 @@ function displayProducts(list) {
 
   document.querySelectorAll(".add-cart").forEach(button => {
     button.addEventListener("click", () => {
-      cartCount++;
-      updateCart();
-      button.textContent = "Added ✓";
-    });
-  });
-}
+  const product = products.find(
+    item => item.name === button.dataset.product
+  );
+
+  if (product) {
+    cartItems.push(product);
+    cartCount = cartItems.length;
+    updateCart();
+    button.textContent = "Added ✓";
+  }
+});
 
 function updateCart() {
   const cart = document.querySelector(".nav-actions");
