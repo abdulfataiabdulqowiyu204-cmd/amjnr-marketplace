@@ -1,4 +1,4 @@
-const products = [
+functionion products = [
   {
     name: "iPhone 13",
     category: "Phones & Tablets",
@@ -138,24 +138,25 @@ function displayProducts(list) {
         updateCart();
       }
     });
-  });
-}
-function updateCart() {
+  function updateCart() {
   const cartButton = document.getElementById("cartBtn");
   const cartCountElement = document.getElementById("cartCount");
   const cartPanel = document.getElementById("cart-panel");
   const cartItemsContainer = document.getElementById("cart-items");
   const cartTotal = document.getElementById("cart-total");
 
+  // Update cart number
   if (cartCountElement) {
-    cartCountElement.textContent = cartCount;
+    cartCountElement.textContent = cartItems.length;
   }
 
-  if (!cartButton) return;
+  // Stop if cart elements are missing
+  if (!cartButton || !cartPanel || !cartItemsContainer) {
+    return;
+  }
 
-  cartButton.onclick = () => {
-    if (!cartPanel || !cartItemsContainer) return;
-
+  // Open cart
+  cartButton.onclick = function () {
     if (cartItems.length === 0) {
       cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
     } else {
@@ -173,7 +174,7 @@ function updateCart() {
 
     cartPanel.style.display = "block";
   };
-}
+  }
 
 
     document.addEventListener("DOMContentLoaded", () => {
