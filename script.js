@@ -1,4 +1,4 @@
-functionion products = [
+const products = [
   {
     name: "iPhone 13",
     category: "Phones & Tablets",
@@ -138,6 +138,7 @@ function displayProducts(list) {
         updateCart();
       }
     });
+  });
   function updateCart() {
   const cartButton = document.getElementById("cartBtn");
   const cartCountElement = document.getElementById("cartCount");
