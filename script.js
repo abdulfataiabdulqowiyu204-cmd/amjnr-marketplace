@@ -249,11 +249,7 @@ if (searchInput) {
 
       displayProducts(results);
 
-      document.getElementById("products")?.scrollIntoView({
-        behavior: "smooth"
-      });
-    });
-  }
+      
 
   const sellerButton = document.getElementById("sellerBtn");
 
