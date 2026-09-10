@@ -96,8 +96,8 @@ function displayProducts(list) {
   }
 
   container.innerHTML = list.map(product => `
-    <article class="product-card">
-      <div class="product-image">
+    <article class="product">
+      <div class="product-img">
         <img
           src="${product.image}"
           alt="${product.name}"
