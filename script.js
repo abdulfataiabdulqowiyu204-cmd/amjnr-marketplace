@@ -1,4 +1,4 @@
- const products = [
+  const products = [
   {
     name: "iPhone 13",
     category: "Phones & Tablets",
