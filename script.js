@@ -139,6 +139,8 @@ function displayProducts(list) {
       }
     });
   });
+}
+
   function updateCart() {
   const cartButton = document.getElementById("cartBtn");
   const cartCountElement = document.getElementById("cartCount");
